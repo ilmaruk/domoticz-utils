@@ -1,0 +1,14 @@
+finders:
+  ip_finder:
+    class: IpFinder
+devices:
+  "192.168.0.83":
+    finder: ip_finder
+    polling_interval: 3
+    missing_threshold: 20
+    domoticz_idx: 24
+  "192.168.0.84":
+    finder: ip_finder
+    polling_interval: 5
+    missing_threshold: 20
+    domoticz_idx: 25
