@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 # This script is executed when the Domoticz IA is armed.
