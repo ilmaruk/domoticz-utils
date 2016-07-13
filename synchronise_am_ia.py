@@ -4,6 +4,8 @@
 # This script is executed when the Domoticz IA is armed.
 # It sets the AlertMe IA accordingly and flashes lights.
 #
+import os
+
 import domoticz_utils.alertme as am
 import logging
 
@@ -43,5 +45,5 @@ def main(credentials):
 
 if "__main__" == __name__:
     set_up_logging(logging.INFO)
-    credentials = load_credentials()
+    credentials = load_credentials(os.path.dirname(os.path.realpath(__file__)))
     main(credentials)

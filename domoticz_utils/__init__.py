@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import logging
+import os
 
 import yaml
 
@@ -13,7 +14,7 @@ def set_up_logging(level):
     logging.getLogger("requests").setLevel(logging.ERROR)
 
 
-def load_credentials(source="etc/credentials.yaml"):
-    with open(source) as stream:
+def load_credentials(path, source="etc/credentials.yaml"):
+    with open(os.path.join(path, source)) as stream:
         credentials = yaml.load(stream)
     return credentials
