@@ -4,11 +4,8 @@ import xmlrpclib
 import datetime
 import logging
 
+from domoticz_utils.alertme import IA_STATE_HOME, IA_STATE_AWAY, IA_STATE_NIGHT
 from errors import *
-
-IA_STATE_HOME = "disarm"
-IA_STATE_AWAY = "away"
-IA_STATE_NIGHT = "night"
 
 
 class WebAPIClient:
@@ -268,7 +265,7 @@ class WebAPIClient:
         if result in self.errors:  # Did an error occur?
             raise self.errors[result]  # If so then raise an exception for it
 
-        return result;
+        return result
 
     def get_all_devices(self):
         if self.trace > 0:

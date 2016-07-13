@@ -29,12 +29,14 @@ if __name__ == "__main__":
         appname = "python_api_test"  # Note that only alphabetic characters and _ are permitted here.
 
         web_api.login(username, password, appname)
-        web_api.disarm_intruder_alarm_home()
-        time.sleep(30)
-        web_api.arm_intruder_alarm_away()
+        print web_api.get_all_services()
+        # print web_api.get_all_service_states("PanicButton")
+        # web_api.disarm_intruder_alarm_home()
+        # time.sleep(30)
+        # web_api.arm_intruder_alarm_away()
 
         # Send an arm command
-        web_api.send_command("IntruderAlarm", "arm")
+        # web_api.send_command("IntruderAlarm", "arm")
 
     except AlertMeException as error:
         print error
